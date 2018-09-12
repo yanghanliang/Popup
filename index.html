@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/public.css">
+    <link rel="stylesheet" type="text/css" href="./css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+
+<body>
+    <button>弹窗</button>
+
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        var popup = function (ele) {
+            console.log(ele)
+            var html =
+                '<div class="create_pop">\
+                    <div class="popup">\
+                        <div class="iconfont icon-guanbi1 close"></div>\
+                        <div class="popup_title">\
+                            创建工作流任务\
+                        </div>\
+                        <div class="pop_line"></div>\
+                        <div class="form">\
+                            <form action="">\
+                                <table class="pop_table">\
+                                    <tr>\
+                                        <td>任务名称</td>\
+                                        <td>\
+                                            <div class="form_input">\
+                                                <input type="text" placeholder="任务名称">\
+                                            </div>\
+                                        </td>\
+                                    </tr>\
+                                    <tr>\
+                                        <td>任务描述</td>\
+                                        <td>\
+                                            <textarea name="" class="text" placeholder="/opt/"></textarea>\
+                                        </td>\
+                                    </tr>\
+                                    <tr>\
+                                        <td>节点名称</td>\
+                                        <td class="td_option node">\
+                                            <div class="input_box">\
+                                                <span>NFV_test_node</span>\
+                                                <img src="./images/bottom.png" alt="">\
+                                            </div>\
+                                            <div class="fixed_select">\
+                                                <span>NFV_test_node1</span>\
+                                                <span>NFV_test_node2</span>\
+                                                <span>NFV_test_node3</span>\
+                                            </div>\
+                                        </td>\
+                                    </tr>\
+                                    <tr>\
+                                        <td>步骤</td>\
+                                        <td>\
+                                            <ul class="td_box">\
+                                                <li class="a">\
+                                                    <span class="serial_number">1</span>\
+                                                    <div class="custom">\
+                                                        <div class="sele_box clearfix">\
+                                                            <span>NFV_test_node</span>\
+                                                            <img src="./images/bottom.png" alt="">\
+                                                        </div>\
+                                                        <div class="option_box">\
+                                                            <span>NFV_test_node1</span>\
+                                                            <span>NFV_test_node2</span>\
+                                                            <span>NFV_test_node3</span>\
+                                                        </div>\
+                                                    </div>\
+                                                    <button>新增步骤</button>\
+                                                </li>\
+                                                <li class="b">\
+                                                    <span class="serial_number">2</span>\
+                                                    <div class="custom">\
+                                                        <div class="sele_box clearfix">\
+                                                            <span>NFV_test_node</span>\
+                                                            <img src="./images/bottom.png" alt="">\
+                                                        </div>\
+                                                        <div class="option_box">\
+                                                            <span>NFV_test_node1</span>\
+                                                            <span>NFV_test_node2</span>\
+                                                            <span>NFV_test_node3</span>\
+                                                        </div>\
+                                                    </div>\
+                                                    <i class="iconfont icon-guanbi1"></i>\
+                                                </li>\
+                                                <li class="c">\
+                                                    <span class="serial_number">3</span>\
+                                                    <div class="custom">\
+                                                        <div class="sele_box clearfix">\
+                                                            <span>NFV_test_node</span>\
+                                                            <img src="./images/bottom.png" alt="">\
+                                                        </div>\
+                                                        <div class="option_box">\
+                                                            <span>NFV_test_node1</span>\
+                                                            <span>NFV_test_node2</span>\
+                                                            <span>NFV_test_node3</span>\
+                                                        </div>\
+                                                    </div>\
+                                                    <i class="iconfont icon-guanbi1"></i>\
+                                                </li>\
+                                            </ul>\
+                                        </td>\
+                                    </tr>\
+                                </table>\
+                            </form>\
+                        </div>\
+                    </div>\
+                </div>'
+
+            $('body').append(html) // 生成弹窗
+            
+            // callback ? callback() : ''
+
+            var remove_ele = function() { // 删除弹窗的方法
+                $('.create_pop').remove()
+            }
+
+            var click_remove = [ // 关闭弹窗的元素
+                '.popup>.close'
+            ]
+            
+            click_remove.forEach( ele => { // 为所有关闭弹窗的元素，执行删除弹窗的方法
+                $(ele).click(remove_ele)
+            })
+        }
+
+        $('button').click(popup)
+    </script>
+</body>
+
+</html>
